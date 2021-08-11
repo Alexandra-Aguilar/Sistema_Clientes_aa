@@ -1,0 +1,22 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import modelo.CategoriaEnum;
+import modelo.Cliente;
+import vista.Menu;
+import vista.MenuAbs;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		MenuAbs menu = new Menu();
+		menu.iniciarMenu();
+	
+		
+
+	}
+
+}

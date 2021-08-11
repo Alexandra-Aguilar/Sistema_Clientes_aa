@@ -1,0 +1,156 @@
+package vista;
+
+
+import java.util.List;
+import java.util.Scanner;
+
+import modelo.CategoriaEnum;
+import modelo.Cliente;
+import servicio.ArchivoServicio;
+import servicio.ClienteServicio;
+import servicio.ExportadorCsv;
+import servicio.ExportadorTxt;
+
+public class Menu extends MenuAbs {
+	 
+	 private ClienteServicio clienteServicio = new ClienteServicio();
+	 private ArchivoServicio archivoServicio;
+	 private ExportadorCsv exportarCsv;
+	 private ExportadorTxt exportarTxt;
+	 private String fileName = "Clientes";
+	 private String fileName1 = "DBClientes.csv";
+	 private Scanner teclado = new Scanner(System.in);
+	 
+
+	@Override
+	public void listarCliente() {
+		clienteServicio.listarClientes();
+		
+		
+	}
+
+	@Override
+	public void agregarCliente() {
+		
+		Cliente client = new Cliente();
+	
+	
+		System.out.println("----------Crear Cliente----------");
+
+		System.out.println("Ingresa RUN del Cliente: ");
+		client.setRunCliente(teclado.nextLine().trim());
+	
+		System.out.println("Ingresa Nombre del Cliente: ");
+		client.setNombreCliente(teclado.nextLine().trim());
+
+		System.out.println("Ingresa Apellido del Cliente: ");
+		client.setApellidoCliente(teclado.nextLine().trim());
+		
+		System.out.println("Ingresa Años del Cliente: ");
+		client.setAniosCliente(teclado.nextLine().trim());
+		
+		
+		clienteServicio.agregarCliente(client);
+		
+		
+	}
+
+	@Override
+	public void editarCliente() {
+		System.out.println("-------------Editar Cliente-------------");
+		System.out.println("Seleccione qué desea hacer: ");
+		System.out.println("1.-Cambiar el estado del Cliente");
+		System.out.println("2.-Editar los datos ingresados del Cliente");
+		System.out.println("Ingrese opcion: ");
+		
+		int opcionEditar = Integer.parseInt(teclado.nextLine().trim());
+		
+		System.out.println("Ingrese RUN del Cliente a editar: ");
+		String runClienteT = teclado.nextLine().trim();
+		
+		int posicion = -1, contador = 0;
+		
+		for (Cliente c: clienteServicio.getListaClientes()) {
+			if (c.getRunCliente().equals(runClienteT)) {
+				posicion = contador;
+			}
+			contador++;
+		}
+		
+		if (posicion >= 0) {
+			Cliente cEditar = clienteServicio.getListaClientes().get(posicion);
+			if (opcionEditar == 1) {
+				System.out.println("\n-----Actualizando estado del Cliente----\n");
+				if (cEditar.getNombreCategoria().equals(CategoriaEnum.Activo))
+					cEditar.setNombreCategoria(CategoriaEnum.Inactivo);
+				else 
+					cEditar.setNombreCategoria(CategoriaEnum.Activo);
+				System.out.println("El estado del Cliente ha sido modificado.");
+			}
+			
+			else if (opcionEditar == 2 ){
+				System.out.println("\n----Actualizando datos del Cliente-----\n");
+				System.out.println("1.-El RUN del Cliente es: " + cEditar.getRunCliente());
+				System.out.println("2.-El Nombre del Cliente es: " + cEditar.getNombreCliente());
+				System.out.println("3.-El Apellido del Cliente es: " + cEditar.getApellidoCliente());
+				System.out.println("4.-Los años como Cliente son: " + cEditar.getAniosCliente());
+				
+				System.out.println("\nIngrese opcion a editar de los datos del cliente: ");
+				int cliEdit = Integer.parseInt(teclado.nextLine().trim());
+				
+				switch (cliEdit) {
+				case 1:
+					System.out.println("1.-Ingrese nuevo RUN del Cliente: ");
+					String runNew = teclado.nextLine().trim();
+					cEditar.setRunCliente(runNew);
+					break;
+				case 2:
+					System.out.println("1.-Ingrese nuevo Nombre del Cliente: ");
+					String nombreNew = teclado.nextLine().trim();
+					cEditar.setNombreCliente(nombreNew);
+					break;
+				case 3:
+					System.out.println("1.-Ingrese nuevo Apellido del Cliente: ");
+					String apellidoNew = teclado.nextLine().trim();
+					cEditar.setApellidoCliente(apellidoNew);
+					break;
+				case 4:
+					System.out.println("1.-Ingrese nueva cantidad de años como Cliente: ");
+					String aniosNew = teclado.nextLine().trim();
+					cEditar.setAniosCliente(aniosNew);
+					break;
+				}
+				
+				System.out.println("Datos cambiados con éxito.");
+			}
+			clienteServicio.getListaClientes().set(posicion, cEditar);
+		}
+		
+		else {
+			System.out.println("No se ha encontrado cliente con número RUN asociado " + runClienteT);
+		}
+
+		
+	}
+
+	@Override
+	public void importarDatos() {
+		System.out.println("\n---------Cargar Datos en Windows---------------\n");
+		System.out.println("Ingresa la ruta en donde se encuentra el archivo DBClientes.csv: ");
+		
+	}
+
+	@Override
+	public void exportarDatos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void terminarPrograma() {
+
+	}
+
+	
+
+}

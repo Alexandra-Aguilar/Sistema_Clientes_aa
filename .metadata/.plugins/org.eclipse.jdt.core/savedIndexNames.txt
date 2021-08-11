@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+C:\Users\gioha\eclipse-workspace\Prueba Sistema de Clientes\.metadata\.plugins\org.eclipse.jdt.core
+2633342639.index
+4070754761.index
+1116236459.index

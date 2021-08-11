@@ -1,0 +1,28 @@
+package main;
+
+import modelo.CategoriaEnum;
+import modelo.Cliente;
+import vista.Menu;
+import vista.MenuAbs;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+		Cliente clientUno = new Cliente();
+		clientUno.setRunCliente("12.123.412-2");
+		clientUno.setNombreCliente("Nicolas");
+		clientUno.setApellidoCliente("Cake");
+		clientUno.setAniosCliente("7 años");
+		clientUno.setNombreCategoria(CategoriaEnum.Activo);
+		
+		System.out.println("Cliente 1: " + clientUno.toString());
+		
+		MenuAbs menu = new Menu();
+		menu.iniciarMenu();
+		
+
+	}
+
+}

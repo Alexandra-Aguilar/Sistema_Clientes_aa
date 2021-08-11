@@ -1,0 +1,93 @@
+package servicio;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import modelo.CategoriaEnum;
+import modelo.Cliente;
+
+
+public class ClienteServicio {
+	
+	List<Cliente> listaClientes = new ArrayList<Cliente>();
+
+	public ClienteServicio(List<Cliente> listaClientes) {
+		super();
+		this.listaClientes = listaClientes;
+	}
+
+	public ClienteServicio() {
+	}
+
+	public List<Cliente> getListaClientes() {
+		return listaClientes;
+	}
+	
+	public void listarClientes() {
+		
+		Cliente clientUno = new Cliente();
+		clientUno.setRunCliente("12.123.412-2");
+		clientUno.setNombreCliente("Nicolas");
+		clientUno.setApellidoCliente("Cake");
+		clientUno.setAniosCliente("7 años");
+		clientUno.setNombreCategoria(CategoriaEnum.Activo);
+		
+		
+		Cliente clientDos = new Cliente();
+		clientDos.setRunCliente("25.673.022-2");
+		clientDos.setNombreCliente("Taylor");
+		clientDos.setApellidoCliente("Shift S.");
+		clientDos.setAniosCliente("1 día");
+		clientDos.setNombreCategoria(CategoriaEnum.Activo);
+		
+	
+		listaClientes.add(clientUno);
+		listaClientes.add(clientDos);
+		
+		this.listaClientes.stream().forEach(
+				(listaFinal) -> {
+			System.out.println("----------Datos del Cliente----------");
+			System.out.println("Run del Cliente: " + listaFinal.getRunCliente());
+			System.out.println("Nombre del Cliente: " + listaFinal.getNombreCliente());
+			System.out.println("Apellido del Cliente: " + listaFinal.getApellidoCliente());
+			System.out.println("Años como Cliente: " + listaFinal.getAniosCliente());
+			System.out.println("Categoría del Cliente: " + listaFinal.getNombreCategoria());
+			System.out.println("\n------------------------------------");
+		}
+);
+	}
+	
+	
+	
+	public void agregarCliente(Cliente client) {
+		this.listaClientes.add(client);
+		
+	
+
+	
+	}
+	public void editarCliente(Cliente cliente) {
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("-------------Editar Cliente-------------");
+		System.out.println("Seleccione qué desea hacer: ");
+		System.out.println("1.-Cambiar el estado del Cliente");
+		System.out.println("2.-Editar los datos ingresados del Cliente");
+		System.out.println("Ingrese opcion: ");
+		int editDatos = teclado.nextInt();
+		teclado.nextLine();
+		System.out.println("\n----------------------------------------\n");
+		
+		if (editDatos == 1) {
+			System.out.println("Ingrese RUN del Cliente a editar: ");
+			String runCliente = teclado.nextLine().trim();
+			for (Cliente recorridoCateg : this.listaClientes);
+			
+			
+		teclado.close();	
+		}
+
+
+	}
+
+}

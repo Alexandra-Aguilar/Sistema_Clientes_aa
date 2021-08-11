@@ -1,0 +1,51 @@
+package vista;
+
+import servicio.ClienteServicio;
+
+public class Menu extends MenuAbs {
+	 
+	 private ClienteServicio clienteServicio;
+	 /*private ArchivoServicio archivoServicio;
+	 private ExportarCsv exportadorCsv;
+	 private ExportarTxt exportarTxt;*/
+	 
+
+	@Override
+	public void listarCliente() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void agregarCliente() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void editarCliente() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void importarDatos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void exportarDatos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void terminarPrograma() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+}

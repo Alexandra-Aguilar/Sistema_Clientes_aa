@@ -1,0 +1,51 @@
+package main;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import modelo.CategoriaEnum;
+import modelo.Cliente;
+import servicio.ClienteServicio;
+import vista.Menu;
+import vista.MenuAbs;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+		List<Cliente> listaClientes = new ArrayList<Cliente>();
+		
+		Cliente clientUno = new Cliente();
+		clientUno.setRunCliente("12.123.412-2");
+		clientUno.setNombreCliente("Nicolas");
+		clientUno.setApellidoCliente("Cake");
+		clientUno.setAniosCliente("7 años");
+		clientUno.setNombreCategoria(CategoriaEnum.Activo);
+		
+		System.out.println("Cliente 1: " + clientUno.toString());
+		
+		Cliente clientDos = new Cliente();
+		clientDos.setRunCliente("25.673.022-2");
+		clientDos.setNombreCliente("Taylor");
+		clientDos.setApellidoCliente("Shift S.");
+		clientDos.setAniosCliente("1 día");
+		clientDos.setNombreCategoria(CategoriaEnum.Activo);
+		
+		System.out.println("Cliente 2: " + clientDos.toString());
+		
+	
+		
+		listaClientes.listIterator(clientUno);
+		listaClientes.add(clientDos);
+	
+		MenuAbs menu = new Menu();
+		menu.iniciarMenu();
+	
+		
+
+	}
+
+}

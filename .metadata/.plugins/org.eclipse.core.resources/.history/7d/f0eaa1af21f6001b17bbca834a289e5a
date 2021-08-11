@@ -1,0 +1,7 @@
+package servicio;
+
+public abstract class Exportador {
+	
+	public abstract void exportar (String filName, )
+
+}

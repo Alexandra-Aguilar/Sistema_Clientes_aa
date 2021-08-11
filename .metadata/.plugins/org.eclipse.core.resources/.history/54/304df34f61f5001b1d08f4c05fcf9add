@@ -1,0 +1,15 @@
+package main;
+
+import vista.Menu;
+import vista.MenuAbs;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MenuAbs menu = new Menu();
+		menu.iniciarMenu();
+
+	}
+
+}

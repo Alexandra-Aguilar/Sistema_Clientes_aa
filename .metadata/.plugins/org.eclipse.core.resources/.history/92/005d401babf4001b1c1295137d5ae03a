@@ -1,0 +1,9 @@
+package servicio;
+
+import java.awt.List;
+
+public class ClienteServicio {
+	
+	private List<Cliente> listaClientes;
+
+}

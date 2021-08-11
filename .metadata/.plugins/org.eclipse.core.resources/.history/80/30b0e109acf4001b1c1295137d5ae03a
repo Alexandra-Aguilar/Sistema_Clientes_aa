@@ -1,0 +1,10 @@
+package servicio;
+
+import java.util.List;
+import modelo.Cliente;
+
+public class ClienteServicio {
+	
+	private List<Cliente> listaClientes;
+
+}

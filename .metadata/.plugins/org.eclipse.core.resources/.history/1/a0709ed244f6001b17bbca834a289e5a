@@ -1,0 +1,31 @@
+package servicio;
+
+import java.util.List;
+import modelo.Cliente;
+
+public class ClienteServicio {
+	
+	private List<Cliente> listaClientes = new ArrayList<Clientes>;
+
+	public ClienteServicio(List<Cliente> listaClientes) {
+		super();
+		this.listaClientes = listaClientes;
+	}
+
+	public List<Cliente> getListaClientes() {
+		return listaClientes;
+	}
+	
+	public void listarClientes(Cliente cliente) {
+		
+	}
+	
+	public void agregarCliente(Cliente cliente) {
+
+	}
+	
+	public void editarCliente(Cliente cliente) {
+
+	}
+
+}

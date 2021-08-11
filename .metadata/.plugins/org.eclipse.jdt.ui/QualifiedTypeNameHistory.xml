@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.awt.List"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="vista.MenuAbs"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="servicio.ExportadorCsv"/>
+    <fullyQualifiedTypeName name="servicio.ExportadorTxt"/>
+    <fullyQualifiedTypeName name="servicio.ArchivoServicio"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="vista.Menu"/>
+    <fullyQualifiedTypeName name="modelo.CategoriaEnum"/>
+    <fullyQualifiedTypeName name="modelo.Cliente"/>
+    <fullyQualifiedTypeName name="servicio.ClienteServicio"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+</qualifiedTypeNameHistroy>

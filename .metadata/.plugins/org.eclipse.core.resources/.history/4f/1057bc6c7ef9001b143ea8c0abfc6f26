@@ -1,0 +1,102 @@
+package vista;
+
+
+import java.util.Scanner;
+
+import modelo.CategoriaEnum;
+import modelo.Cliente;
+import servicio.ArchivoServicio;
+import servicio.ClienteServicio;
+import servicio.ExportadorCsv;
+import servicio.ExportadorTxt;
+
+public class Menu extends MenuAbs {
+	 
+	 ClienteServicio clienteServicio = new ClienteServicio();
+	 /*private ArchivoServicio archivoServicio;
+	 private ExportadorCsv exportarCsv;
+	 private ExportadorTxt exportarTxt;
+	 private String fileName = "Clientes";
+	 private String fileName1 = "DBClientes.csv";*/
+	 private Scanner teclado = new Scanner(System.in);
+	 
+
+	@Override
+	public void listarCliente() {
+		clienteServicio.listarClientes();
+		
+		
+	}
+
+	@Override
+	public void agregarCliente() {
+		
+		Cliente client = new Cliente();
+	
+	
+		System.out.println("----------Crear Cliente----------");
+
+		System.out.println("Ingresa RUN del Cliente: ");
+		client.setRunCliente(teclado.nextLine().trim());
+	
+		System.out.println("Ingresa Nombre del Cliente: ");
+		client.setNombreCliente(teclado.nextLine().trim());
+
+		System.out.println("Ingresa Apellido del Cliente: ");
+		client.setApellidoCliente(teclado.nextLine().trim());
+		
+		System.out.println("Ingresa Años del Cliente: ");
+		client.setAniosCliente(teclado.nextLine().trim());
+		
+		
+		clienteServicio.agregarCliente(client);
+		
+		
+	}
+
+	@Override
+	public void editarCliente() {
+		System.out.println("-------------Editar Cliente-------------");
+		System.out.println("Seleccione qué desea hacer: ");
+		System.out.println("1.-Cambiar el estado del Cliente");
+		System.out.println("2.-Editar los datos ingresados del Cliente");
+		System.out.println("Ingrese opcion: ");
+		int editDatos = teclado.nextInt();
+		teclado.nextLine();
+		System.out.println("\n----------------------------------------\n");
+		
+		if (editDatos == 1) {
+			System.out.println("Ingrese RUN del Cliente a editar: ");
+			String runCliente = teclado.nextLine().trim();
+			for (Cliente recorridoCateg : clienteServicio.editarCliente(recorridoCateg));
+	
+	
+		
+		
+
+		}
+	}
+
+	@Override
+	public void importarDatos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void exportarDatos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void terminarPrograma() {
+		// TODO Auto-generated method stub
+	
+
+		
+	}
+
+	
+
+}

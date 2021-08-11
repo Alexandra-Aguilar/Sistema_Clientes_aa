@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="Pruebas" project="SistemaClientes" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="test.Pruebas" time="0.006">
+    <testcase name="agregarClienteNullTest" classname="test.Pruebas" time="0.006"/>
+    <testcase name="agregarClienteTest" classname="test.Pruebas" time="0.0"/>
+  </testsuite>
+</testrun>

@@ -1,0 +1,121 @@
+package vista;
+
+
+import java.util.List;
+import java.util.Scanner;
+
+import modelo.CategoriaEnum;
+import modelo.Cliente;
+import servicio.ArchivoServicio;
+import servicio.ClienteServicio;
+import servicio.ExportadorCsv;
+import servicio.ExportadorTxt;
+
+public class Menu extends MenuAbs {
+	 
+	 ClienteServicio clienteServicio = new ClienteServicio();
+	 /*private ArchivoServicio archivoServicio;
+	 private ExportadorCsv exportarCsv;
+	 private ExportadorTxt exportarTxt;
+	 private String fileName = "Clientes";
+	 private String fileName1 = "DBClientes.csv";*/
+	 private Scanner teclado = new Scanner(System.in);
+	 
+
+	@Override
+	public void listarCliente() {
+		clienteServicio.listarClientes();
+		
+		
+	}
+
+	@Override
+	public void agregarCliente() {
+		
+		Cliente client = new Cliente();
+	
+	
+		System.out.println("----------Crear Cliente----------");
+
+		System.out.println("Ingresa RUN del Cliente: ");
+		client.setRunCliente(teclado.nextLine().trim());
+	
+		System.out.println("Ingresa Nombre del Cliente: ");
+		client.setNombreCliente(teclado.nextLine().trim());
+
+		System.out.println("Ingresa Apellido del Cliente: ");
+		client.setApellidoCliente(teclado.nextLine().trim());
+		
+		System.out.println("Ingresa Años del Cliente: ");
+		client.setAniosCliente(teclado.nextLine().trim());
+		
+		
+		clienteServicio.agregarCliente(client);
+		
+		
+	}
+
+	@Override
+	public void editarCliente() {
+		System.out.println("-------------Editar Cliente-------------");
+		System.out.println("Seleccione qué desea hacer: ");
+		System.out.println("1.-Cambiar el estado del Cliente");
+		System.out.println("2.-Editar los datos ingresados del Cliente");
+		System.out.println("Ingrese opcion: ");
+		
+		int opcionEditar = Integer.parseInt(teclado.next().trim());
+		String runClienteT = teclado.next().trim();
+		
+		int posicion = -1, contador = 0;
+		
+		for (Cliente c: clienteServicio.getListaClientes()) {
+			if (c.getRunCliente().equals(runClienteT)) {
+				posicion = contador;
+			}
+			contador++;
+		}
+		
+		if (posicion >= 0) {
+			Cliente cEditar = clienteServicio.getListaClientes().get(posicion);
+			if (opcionEditar == 1) {
+				if (cEditar.getNombreCategoria().equals(CategoriaEnum.Activo))
+					cEditar.setNombreCategoria(CategoriaEnum.Inactivo);
+			}
+		}
+		
+		else {
+			System.out.println("No se ha encontrado cliente con número RUN asociado " + runClienteT);
+		}
+	
+			
+	
+	
+		
+		
+
+		
+	}
+
+	@Override
+	public void importarDatos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void exportarDatos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void terminarPrograma() {
+		// TODO Auto-generated method stub
+	
+
+		
+	}
+
+	
+
+}

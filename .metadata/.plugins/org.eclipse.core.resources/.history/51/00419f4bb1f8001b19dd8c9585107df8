@@ -1,0 +1,68 @@
+package servicio;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import modelo.CategoriaEnum;
+import modelo.Cliente;
+
+
+public class ClienteServicio {
+	
+	private List<Cliente> listaClientes = new ArrayList<Cliente>();
+
+	public ClienteServicio(List<Cliente> listaClientes) {
+		super();
+		this.listaClientes = listaClientes;
+	}
+
+	public ClienteServicio() {
+	}
+
+	public List<Cliente> getListaClientes() {
+		return listaClientes;
+	}
+	
+	public void listarClientes() {
+		
+		for (Cliente listaFinal : this.listaClientes) {
+			System.out.println("----------Datos del Cliente----------");
+			System.out.println("Run del Cliente: " + listaFinal.getRunCliente());
+			System.out.println("Nombre del Cliente: " + listaFinal.getNombreCliente());
+			System.out.println("Apellido del Cliente: " + listaFinal.getApellidoCliente());
+			System.out.println("Años como Cliente: " + listaFinal.getAniosCliente());
+			System.out.println("Categoría del Cliente: " + listaFinal.getNombreCategoria());
+			System.out.println("------------------------------------");
+		}
+
+	}
+	
+	public void agregarCliente(Cliente client) {
+		Cliente client = new Cliente();
+		
+		
+		System.out.println("----------Crear Cliente----------");
+
+		System.out.println("Ingresa RUN del Cliente: ");
+		client.setRunCliente(teclado.nextLine().trim());
+	
+		System.out.println("Ingresa Nombre del Cliente: ");
+		client.setNombreCliente(teclado.nextLine().trim());
+
+		System.out.println("Ingresa Apellido del Cliente: ");
+		client.setApellidoCliente(teclado.nextLine().trim());
+		
+		System.out.println("Ingresa Años del Cliente: ");
+		client.setAniosCliente(teclado.nextLine().trim());
+		
+		
+		clienteServicio.agregarCliente(client);
+		listaClientes.add(client);
+
+	
+	}
+	public void editarCliente(Cliente cliente) {
+
+	}
+
+}

@@ -1,0 +1,46 @@
+package servicio;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+import modelo.Cliente;
+import vista.Menu;
+
+public class ClienteServicio {
+	
+	private List<Cliente> listaClientes = new ArrayList<Cliente>();
+
+	public ClienteServicio(List<Cliente> listaClientes) {
+		super();
+		this.listaClientes = listaClientes;
+	}
+
+	public List<Cliente> getListaClientes() {
+		return listaClientes;
+	}
+	
+	public void listarClientes(Cliente cliente) {
+		
+		for (Cliente listaFinal : this.listaClientes) {
+			System.out.println("----------Datos del Cliente----------");
+			System.out.println("Run del Cliente: " + listaFinal.getRunCliente());
+			System.out.println("Nombre del Cliente: " + listaFinal.getNombreCliente());
+			System.out.println("Apellido del Cliente: " + listaFinal.getApellidoCliente());
+			System.out.println("Años del Cliente: " + listaFinal.getAniosCliente() + "Años");
+			System.out.println("Categoría del Cliente: " + listaFinal.getNombreCategoria());
+			System.out.println("------------------------------------");
+		}
+
+	}
+	
+	public void agregarCliente(Menu datos) {
+		this.listaClientes.add(datos);
+
+	
+	}
+	public void editarCliente(Cliente cliente) {
+
+	}
+
+}

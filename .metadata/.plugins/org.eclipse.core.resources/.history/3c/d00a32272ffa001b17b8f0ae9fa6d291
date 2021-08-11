@@ -1,0 +1,41 @@
+package servicio;
+
+
+import java.util.List;
+
+import modelo.Cliente;
+import vista.Menu;
+
+public class ArchivoServicio extends Exportador{
+	
+	Menu menu = new Menu();
+
+	@Override
+	public void exportar(String filName, List<Cliente> listaClientes) {
+		System.out.println("---------Exportar Datos-----------");
+		System.out.println("Seleccione el formato a exportar: ");
+		System.out.println("1.-Formato csv");
+		System.out.println("2.-Formato txt");
+		System.out.println("\nIngrese una opción para exportar: \n");
+		System.out.println("----------------------------------");
+		
+		int opcionExp = Integer.parseInt(menu.teclado.nextLine().trim());
+		
+		if (opcionExp == 1) {
+			System.out.println("---------Exportar Datos en Windows---------------");
+			System.out.println("Ingresa la ruta en donde desea exportar el archivo clientes.csv: ");
+			String rutaExp = this.teclado.nextLine().trim();
+			
+			String rutaArchivo = rutaExp + "\\" + this.fileName + ".Csv";
+			exportarCsv.exportar(rutaArchivo, null);;
+		}
+		
+	}
+	
+	public void cargarDatos(String filName) {
+		
+		
+		
+	}
+
+}

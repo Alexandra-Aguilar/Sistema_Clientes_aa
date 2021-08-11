@@ -1,0 +1,20 @@
+package test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import modelo.Cliente;
+import servicio.ClienteServicio;
+
+public class Pruebas {
+
+	@Test
+	public void agregarClienteTest() {
+		Cliente clientPrueba = new Cliente ("12.123.123-1", "Fernanda", "Granada", "7 Años", "Activo"); 
+		
+		
+		
+	}
+
+}
